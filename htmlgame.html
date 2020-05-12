@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>  Game </title>
+    <link rel="stylesheet" href="cssav.css">
+
+  </head>
+  <body>
+    <table class="table1"style="width:100%">
+
+    <tr>
+        <td onclick="writexo(0)"  id="0"></td>
+        <td onclick="writexo(1)" id="1"></td>
+        <td onclick="writexo(2)" id="2"></td>
+    </tr>
+    <tr>
+       <td onclick="writexo(3)" id="3"></td>
+       <td onclick="writexo(4)" id="4"></td>
+       <td onclick="writexo(5)" id="5"></td>
+    </tr>
+    <tr>
+       <td onclick="writexo(6)" id="6"></td>
+       <td onclick="writexo(7)" id="7"></td>
+       <td onclick="writexo(8)" id="8"></td>
+    </tr>
+  </table>
+
+
+
+
+  </body>
+  <script>
+
+    var xo =["","","",
+                  "","","",
+                  "","","" ];
+var flag=true;
+function writexo(a){
+  if(xo[a]=="" || xo[a]=="null") 
+{
+
+
+  if (flag) {
+
+    console.log(a);console.log(flag);
+    document.getElementById(a).innerHTML="X";
+    xo[a]= "X";
+     flag=false;
+    if(
+    xo[0]=="X" && xo[1]=="X"  &&xo[2]=="X"  ||
+    xo[3]=="X" && xo[4]=="X"  &&xo[5]=="X"  ||
+    xo[6]=="X" && xo[7]=="X"  &&xo[8]=="X"  ||
+    xo[0]=="X" && xo[3]=="X"  &&xo[6]=="X"  ||
+    xo[1]=="X" && xo[4]=="X"  &&xo[7]=="X"  ||
+    xo[2]=="X" && xo[5]=="X"  &&xo[8]=="X"  ||
+    xo[0]=="X" && xo[4]=="X"  &&xo[8]=="X"  ||
+    xo[2]=="X" && xo[4]=="X"  &&xo[6]=="X"   )
+    {
+      document.getElementById(a).innerHTML="X";
+
+      alert("X winner");  
+      flag=false;
+
+
+    }
+
+ 
+
+
+  }
+  else {
+    document.getElementById(a).innerHTML="O";
+    flag=true;
+    xo[a]= "O";
+    // checking Y winning Contion 
+    if(
+    xo[0]=="O" && xo[1]=="O"  &&xo[2]=="O"  ||
+    xo[3]=="O" && xo[4]=="O"  &&xo[5]=="O"  ||
+    xo[6]=="O" && xo[7]=="O"  &&xo[8]=="O"  ||
+    xo[0]=="O" && xo[3]=="O"  &&xo[6]=="O"  ||
+    xo[1]=="O" && xo[4]=="O"  &&xo[7]=="O"  ||
+    xo[2]=="O" && xo[5]=="O"  &&xo[8]=="O"  ||
+    xo[0]=="O" && xo[4]=="O"  &&xo[8]=="O"  ||
+    xo[2]=="O" && xo[4]=="O"  &&xo[6]=="O"        )
+    {
+      alert("o winner");  
+    }
+    
+  }
+}
+
+
+
+}
+
+  </script>
+</html>
